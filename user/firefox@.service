@@ -1,0 +1,10 @@
+[Unit]
+Description=Firefox %I
+
+[Service]
+ExecStart=/usr/bin/env /usr/sbin/firefox -new-instance
+MemoryAccounting=true
+MemoryLimit=2G
+
+[Install]
+WantedBy=mystuff.target

@@ -1,0 +1,9 @@
+[Unit]
+Description=nm-applet
+After=tint2.service
+
+[Service]
+ExecStart=/usr/sbin/nm-applet
+
+[Install]
+WantedBy=mystuff.target

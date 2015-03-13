@@ -1,0 +1,9 @@
+[Unit]
+Description=xautolock
+
+[Service]
+ExecStart=/usr/sbin/xautolock -detectsleep -time 60
+ExecStop=/usr/sbin/xautolock -exit
+
+[Install]
+WantedBy=mystuff.target

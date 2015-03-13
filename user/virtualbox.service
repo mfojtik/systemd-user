@@ -1,0 +1,13 @@
+[Unit]
+Description=VBox Virtual Machine %i Service
+Requires=xwm.service
+After=systemd-modules-load.service
+
+[Service]
+User=mfojtik
+Group=users
+ExecStart=/usr/bin/VBoxHeadless -s %i
+ExecStop=/usr/bin/VBoxManage controlvm %i savestate
+
+[Install]
+WantedBy=mystuff.target

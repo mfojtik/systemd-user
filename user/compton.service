@@ -1,0 +1,11 @@
+[Unit]
+Description=Composite manager
+After=xorg.target
+Before=xwm.service
+
+[Service]
+Type=simple
+ExecStart=/usr/sbin/compton
+
+[Install]
+WantedBy=mystuff.target

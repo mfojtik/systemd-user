@@ -1,0 +1,9 @@
+[Unit]
+Description=Dropbox applet
+After=nm-applet.service
+
+[Service]
+ExecStart=/home/mfojtik/.dropbox-dist/dropbox-lnx.x86_64-3.1.270/dropbox /newerversion
+
+[Install]
+WantedBy=mystuff.target

@@ -1,0 +1,10 @@
+[Unit]
+Description=Desktop wallpaper
+After=compton.service
+
+[Service]
+Restart=no
+ExecStart=/usr/sbin/feh --bg-tile .backgrounds/binding_dark.png
+
+[Install]
+WantedBy=mystuff.target

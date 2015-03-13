@@ -1,0 +1,13 @@
+[Unit]
+Description=A simple X hotkey daemon
+Requires=xorg.target
+Requires=mystuff.target
+After=xorg.target
+Before=mystuff.target
+
+[Service]
+ExecStart=/usr/bin/sxhkd
+ExecReload=/usr/bin/kill -SIGUSR1 $MAINPID
+
+[Install]
+WantedBy=wm.target

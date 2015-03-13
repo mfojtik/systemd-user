@@ -1,0 +1,13 @@
+[Unit]
+Description=Terminal %I
+After=xwm.service
+Requires=ssh-agent.service
+Requires=gpg-agent.service
+
+[Service]
+Environment=SSH_AUTH_SOCK=%t/ssh-agent.socket GPG_ENVFILE=%t/gpg-agent.info
+ExecStart=/usr/bin/termite
+RemainAfterExit=false
+
+[Install]
+WantedBy=mystuff.target

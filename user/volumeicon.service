@@ -1,0 +1,9 @@
+[Unit]
+Description=volumeicon
+After=tint2.service
+
+[Service]
+ExecStart=/usr/sbin/volumeicon
+
+[Install]
+WantedBy=mystuff.target

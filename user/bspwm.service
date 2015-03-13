@@ -1,0 +1,19 @@
+[Unit]
+Description=Manual tiling window manager
+Requires=xorg.target
+Requires=mystuff.target
+After=xorg.target
+Before=mystuff.target
+
+[Service]
+ExecStartPre=/usr/bin/rm -rf /tmp/bspwm*
+ExecStartPre=/usr/bin/xset +fp /usr/share/fonts/local
+ExecStart=/usr/bin/bspwm -c /home/mfojtik/.config/bspwm/bspwmrc
+ExecStop=/usr/bin/bspc quit
+ExecStartPost=/usr/bin/xsetroot -cursor_name left_ptr
+Restart=always
+RestartSec=1
+
+[Install]
+WantedBy=wm.target
+Alias=xwm.service

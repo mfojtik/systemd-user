@@ -1,0 +1,11 @@
+[Unit]
+Description=tint2
+After=compton.service
+After=xwm.service
+Requires=xorg.service
+
+[Service]
+ExecStart=/usr/sbin/tint2
+
+[Install]
+WantedBy=mystuff.target

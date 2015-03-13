@@ -1,0 +1,10 @@
+[Unit]
+Description=Application %i
+IgnoreOnIsolate=yes
+
+[Service]
+ExecStart=/home/mfojtik/bin/run %i
+KillMode=process
+
+[Install]
+WantedBy=mystuff.target

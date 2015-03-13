@@ -1,0 +1,13 @@
+[Unit]
+Description=dzen2
+After=compton.service
+After=xwm.service
+Requires=xorg.service
+
+[Service]
+ExecStart=/home/mfojtik/go/bin/go-dzen
+Restart=on-failure
+RestartSec=1
+
+[Install]
+WantedBy=mystuff.target

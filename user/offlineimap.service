@@ -1,0 +1,11 @@
+[Unit]
+Description=IMAP poller and mail downloader
+
+[Service]
+Type=simple
+ExecStart=/home/mfojtik/bin/getmail run -s "mail.corp.redhat.com"
+Restart=always
+RestartSec=5
+
+[Install]
+WantedBy=mystuff.target

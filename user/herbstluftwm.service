@@ -1,0 +1,19 @@
+[Unit]
+Description=Manual tiling window manager
+Requires=xorg.target
+Requires=mystuff.target
+After=xorg.target
+Before=mystuff.target
+
+[Service]
+Type=notify
+ExecStart=/usr/bin/herbstluftwm --locked
+ExecReload=/usr/bin/herbstclient reload
+ExecStop=/usr/bin/herbstclient quit
+Restart=always
+RestartSec=10
+NotifyAccess=all
+
+[Install]
+WantedBy=wm.target
+Alias=xwm.service
